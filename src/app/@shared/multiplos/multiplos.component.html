@@ -1,20 +1,25 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <div>
-        <label for="numero">Número:</label>
-        <input type="number" id="numero" [formControl]="numeroControl" />
-        <button (click)="buscarMultiplos()">Buscar</button>
-      </div>
-      <div *ngIf="numeros.length > 0">
-        <h2>Números encontrados:</h2>
-        <ul>
-          <li *ngFor="let numero of numeros" [class]="numero.color">
-            {{ numero.numero }}
-            <span *ngIf="numero.multiplos.length > 0"> (multiplo de {{ numero.multiplos.join(', ') }}) </span>
-          </li>
-        </ul>
-      </div>
+      <h1>Multiplos</h1>
+      <hr />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="numero" class="text">Introduzca un numero para mostrar sus multiplos.</label>
+      <br />
+      <input type="number" name="numero" id="userNumber" [formControl]="numeroControl" />
+      <button type="button" class="btn btn-primary" (click)="buscarMultiplos()">Buscar</button>
+    </div>
+    <div *ngIf="numeros.length > 0">
+      <h4>Números encontrados:</h4>
+      <ul>
+        <li *ngFor="let numero of numeros" [class]="numero.color">
+          {{ numero.numero }}
+          <span *ngIf="numero.multiplos.length > 0"> (multiplo de {{ numero.multiplos.join(', ') }}) </span>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
