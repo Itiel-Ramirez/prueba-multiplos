@@ -9,10 +9,11 @@
     <div class="col">
       <label for="numero" class="text">Introduzca un numero para mostrar sus multiplos.</label>
       <br />
-      <input type="number" name="numero" id="userNumber" [formControl]="numeroControl" />
+      <input type="number" name="numero" id="numUsr" [formControl]="numeroControl" />
       <button type="button" class="btn btn-primary" (click)="buscarMultiplos()">Buscar</button>
     </div>
     <div *ngIf="numeros.length > 0">
+      <br />
       <h4>Números encontrados:</h4>
       <ul>
         <li *ngFor="let numero of numeros" [class]="numero.color">
